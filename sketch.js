@@ -45,7 +45,7 @@ function setup() {
 
   trainingProgress = select('#training-progress');
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {
     predictions.push(select('#class' + (i - (-1)) + '-name'));
     probabilities.push(select('#class' + (i - (-1)) + '-probability'));
     classButtons.push(select('#class' + (i - (-1)) + 'button'));
@@ -144,7 +144,7 @@ function gotResults(error, result) {
     console.log(error);
   } else {
     // console.log(result);
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       predictions[i].html(classes[i]);
       probabilities[i].html((result == classes[i] ? 100 : 0) + '%');
       probabilities[i].attribute('aria-valuenow', (result == classes[i] ? 100 : 0));
